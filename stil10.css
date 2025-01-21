@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    background-color: #DC143C;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    background-color: #FA8072;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #DC143C;
+    transform: scale(1.1) rotate(180deg);
+}
+
+button:active {
+    background-color: #FA8072;
+    transform: scale(1) rotate(180deg);
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px #3498db;
+    outline: none;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #2ecc71;
+    margin: 20px auto;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: rotate(45deg);
+}
+
+img {
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes pomicanje {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(50px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100px);
+        opacity: 1;
+    }
+}
+
+.anim-box .anim-item.izdvojeno {
+    animation: pomicanje 3s ease-in-out infinite;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+}
+
+.anim-box .anim-item:nth-child(2) {
+    color: red;
+    font-weight: bold;
+}
+
+.anim-box .anim-item:nth-of-type(2) {
+    animation: pomicanje 2s ease-in-out infinite;
+    background-color: lightgreen;
+}
+
+.container > .anim-box + p {
+    color: blue;
+    text-decoration: underline;
+}
+@keyframes rotate3D {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.button-3d {
+    perspective: 1000px;
+}
+
+.button-3d button:hover {
+    animation: rotate3D 2s linear infinite;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #2ecc71;
+    margin: 20px auto;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.box:hover {
+    transform: rotateX(45deg) rotateY(45deg);
+}
+
+img {
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+img:hover {
+    transform: rotateY(360deg);
+}
